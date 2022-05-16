@@ -1,0 +1,1 @@
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/fheahdythdr/FloppaMods/main/cult%20of%20cryptid.lua"))()
