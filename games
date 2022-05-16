@@ -32,7 +32,3 @@ cotc = {
 pf = {
   292439477
 }
-
-getgenv().backrooml = false
-getgenv().cotcl = false
-getgenv().pfl = false
