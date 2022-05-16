@@ -6,8 +6,10 @@ get("games")
 
 if table.find(backroom, cg) then
     get("backroom")
-elseif table.find(cotc, cg) then
+end
+if table.find(cotc, cg) then
     get("cotc")
-elseif table.find(pf, cg) then
+end
+if table.find(pf, cg) then
     get("pfesp")
 end
