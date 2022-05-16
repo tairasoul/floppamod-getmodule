@@ -1,0 +1,13 @@
+local function get(filename)
+    return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/fheahdythdr/floppamod-getmodule/main/"..filename))()
+end
+
+get("games")
+
+if table.find(backroom, cg) then
+    get("backroom")
+elseif table.find(cotc, cg) then
+    get("cotc")
+elseif table.find(pf, cg) then
+    get("pfesp")
+end
