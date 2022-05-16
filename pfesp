@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/fheahdythdr/FloppaMods/main/phantom%20force%20esp.lua"))()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/fheahdythdr/FloppaMods/main/phantom%20force%20esp.lua"))()
