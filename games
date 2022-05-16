@@ -33,6 +33,6 @@ pf = {
   292439477
 }
 
-backrooml = false
-cotcl = false
-pfl = false
+getgenv().backrooml = false
+getgenv().cotcl = false
+getgenv().pfl = false
