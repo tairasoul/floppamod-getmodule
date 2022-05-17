@@ -264,6 +264,16 @@ Tab1:AddBind({
     end    
 })
 
+Tab1:AddToggle({
+    Name = "Toggle Player ESP",
+    Default = false,
+    Save = true,
+    Flag = "esp",
+    Callback = function(Value)
+        ESP.Players = Value
+    end
+})
+
 local Tab = Window:MakeTab({
     Name = "Utilities",
     Icon = "rbxassetid://5822168115",
