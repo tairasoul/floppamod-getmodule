@@ -384,3 +384,4 @@ Tab:AddButton({
 })
 
 OrionLib:Init()
+ESP:Toggle(true)
