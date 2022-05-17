@@ -1,0 +1,155 @@
+local Lib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/BoredStuff2/notify-lib/main/lib'),true))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "cult of the cryptids script but i smoked meth", HidePremium = false, SaveConfig = true, ConfigFolder = "funni coc esp"})
+
+local Tab2 = Window:MakeTab({
+    Name = "Main",
+    Icon = "",
+    PremiumOnly = false
+})
+
+local Tab1 = Window:MakeTab({
+    Name = "Misc",
+    Icon = "",
+    PremiumOnly = false
+})
+
+local Tab = Window:MakeTab({
+    Name = "Teleports",
+    Icon = "",
+    PremiumOnly = false
+})
+
+Tab:AddLabel("Non-Backrooms Teleports")
+
+Tab:AddButton({
+    Name = "Teleport to Lobby",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(5082331079, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Chapter 1 (Exploiter/Private Lobby)",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(5202597474, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Chapter 2 (Exploiter/Private Lobby, Origin)",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(6996352354, LocalPlayer)
+    end
+})
+
+Tab1:AddToggle({
+    Name = "Toggle Player ESP",
+    Default = false,
+    Save = true,
+    Flag = "esp",
+    Callback = function(Value)
+        ESP.Players = Value
+    end
+})
+
+Tab2:AddButton({
+    Name = "Fullbright",
+    Callback = function()
+        game:GetService("Lighting").Brightness = 2
+        game:GetService("Lighting").ClockTime = 14
+        game:GetService("Lighting").FogEnd = 100000
+        game:GetService("Lighting").GlobalShadows = false
+        game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+    end
+})
+
+local Tab = Window:MakeTab({
+    Name = "Utilities",
+    Icon = "rbxassetid://5822168115",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "Infinite Yield",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Infinite-Store/main/main.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "Fate's Admin",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "Mollermethod",
+    Callback = function()
+        			loadstring(game:HttpGet 'https://mthd.ml') {
+				bracket_toggle = Enum.KeyCode.LeftBracket;
+				debug = false;
+				volume = 5;
+				bracket_external = false;
+			theme = {
+				accent = "#ff4539";
+				background = "#1c1c1c";
+				foreground = "#f0f6fc";
+			};
+		}
+end
+})
+
+Tab:AddLabel("Mollermethod's keybind is Left Bracket, aka [")
+
+Tab:AddButton({
+    Name = "Rejoin Game",
+    Callback = function()
+        game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId,game.JobId)
+    end
+})
+	
+Tab:AddButton({
+    Name = "Join our Discord!",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/fheahdythdr/legendary-train/main/discord%20invite.lua"))()
+    end
+})
+
+local Tab = Window:MakeTab({
+    Name = "Modifying",
+    Icon = "rbxassetid://4498590361",
+    PremiumOnly = false
+})
+
+Tab:AddParagraph("How to modify this script","Dark Dex and SimpleSpy are your best utilities for this, just find things you wanna add (ex. silent aim) and then modify according things.")
+
+Tab:AddButton({
+    Name = "Dark Dex",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fheahdythdr/legendary-train/main/dark%20dex.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "SimpleSpy",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+    end
+})
+
+Tab1:AddBind({
+    Name = "Toggle UI",
+    Default = Enum.KeyCode.RightShift,
+    Hold = false,
+    Callback = function()
+        if game:GetService("CoreGui").Orion.Enabled == true then
+        game:GetService("CoreGui").Orion.Enabled = false
+        else
+        game:GetService("CoreGui").Orion.Enabled = true
+        end
+    end    
+})
+
+OrionLib:Init()
