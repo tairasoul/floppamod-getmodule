@@ -1,3 +1,8 @@
+--why did this shit update immediately
+--why did it take 2 updates on cotc_lobby for github to register the updated thing on the raw??
+--what
+--anyway, this is the module for chapter 1 of cult of the cryptids
+
 local cservice = game:GetService("ReplicatedStorage").Events.CollectableService
 
 if workspace.CollectablesPart1.Active:FindFirstChild("Fuel"):FindFirstChild("Fuel1") then
