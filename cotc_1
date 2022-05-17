@@ -1,10 +1,10 @@
 --[[
-	how'd i forget the esp:toggle at the end
+	properly did script-ware support
 	
 	anyway, this is the module for chapter 1 of cult of the cryptids
 ]]--
 
-if identifyexecutor() == "Script-Ware" then
+if identifyexecutor() == "ScriptWare" then
 	syn.queue_on_teleport = queue_on_teleport
 end
 
