@@ -1,0 +1,192 @@
+ESP:AddObjectListener(workspace.Totems, {
+    Color = Color3.fromRGB(255, 0, 255),
+})
+
+Tab2:AddButton({
+    Name = "Add Objects to ESP (underground hideout)",
+    Callback = function()
+        
+    ESP:AddObjectListener(workspace.Map.UndergroundHidout, {
+    Color = Color3.fromRGB(255, 0, 0),
+    Name = "CartoonCat",
+    CustomName = "Cartoon Cat"
+})
+
+ESP:AddObjectListener(workspace.Map.UndergroundHidout.Doors, {
+    Color = Color3.fromRGB(0, 0, 255),
+    CustomName = "Door"
+})
+end
+})
+
+ESP:AddObjectListener(workspace.Cryptids, {
+    Color = Color3.fromRGB(255, 0, 0),
+})
+  
+Tab2:AddButton({
+    Name = "Refresh cryptids ESP",
+    Callback = function()
+while true do
+wait(0.1)
+ESP:AddObjectListener(workspace.Cryptids, {
+    Color = Color3.fromRGB(255, 0, 0),
+})
+
+end
+end
+}) 
+
+Tab:AddLabel("WARNING, COULD GET YOU BANNED")
+	
+Tab2:AddButton({
+    Name = "Collect all Totems (takes a while)",
+    Callback = function()
+        getgenv().HRPOSITION = hrp.CFrame
+        hrp.CFrame = workspace.Totems.Totem1.CFrame
+        wait(1)
+        fireclickdetector(workspace.Totems.Totem1.ClickDetector)
+        wait(1)
+        hrp.CFrame = workspace.Totems.Totem2.CFrame
+        wait(1)
+        fireclickdetector(workspace.Totems.Totem2.ClickDetector)
+        wait(1)
+        hrp.CFrame = workspace.Totems.Totem3.CFrame
+        wait(1)
+        fireclickdetector(workspace.Totems.Totem3.ClickDetector)
+        wait(1)
+        hrp.CFrame = workspace.Totems.Totem4.CFrame
+        wait(1)
+        fireclickdetector(workspace.Totems.Totem4.ClickDetector)
+        wait(1)
+        hrp.CFrame = wto.Totem5.CFrame
+        wait(1)
+        fireclickdetector(wto.Totem5.ClickDetector)
+        wait(1)
+        hrp.CFrame = wto.Totem6.CFrame
+        wait(1)
+        fireclickdetector(wto.Totem6.ClickDetector)
+        wait(1)
+        hrp.CFrame = wto.Totem7.CFrame
+        wait(1)
+        fireclickdetector(wto.Totem7.ClickDetector)
+        wait(1)
+        hrp.CFrame = wto.Totem8.CFrame
+        wait(1)
+        fireclickdetector(wto.Totem8.ClickDetector)
+        wait(1)
+        hrp.CFrame = wto.RareTotem1.CFrame
+        wait(1)
+        fireclickdetector(wto.RareTotem1.ClickDetector)
+        wait(1)
+        hrp.CFrame = workspace.Totems.RareTotem2.CFrame
+        wait(1)
+        fireclickdetector(workspace.Totems.RareTotem2.ClickDetector)
+        wait(1)
+        hrp.CFrame = workspace.Totems.RareTotem3.CFrame
+        wait(1)
+        fireclickdetector(workspace.Totems.RareTotem3.ClickDetector)
+        wait(1)
+        hrp.CFrame = workspace.Totems.RareTotem4.CFrame
+        wait(1)
+        fireclickdetector(workspace.Totems.RareTotem4.ClickDetector)
+        wait(1)
+        hrp.CFrame = wto.RareTotem5.CFrame
+        wait(1)
+        fireclickdetector(wto.RareTotem5.ClickDetector)
+        wait(1)
+        hrp.CFrame = wto.RareTotem6.CFrame
+        wait(1)
+        fireclickdetector(wto.RareTotem6.ClickDetector)
+        wait(1)
+        hrp.CFrame = getgenv().HRPOSITION
+    end
+})
+	
+Tab2:AddButton({
+    Name = "Collect all Masks",
+    Callback = function()
+        for i,v in pairs(workspace.Masks:GetDescendants()) do
+            if v:IsA("ClickDetector") then
+                fireclickdetector(v)
+            end
+        end
+    end
+})
+
+Tab2:AddButton({
+    Name = "Finish Asylum",
+    Callback = function()
+        for i,v in pairs(workspace.Map.AsylumAssets:GetDescendants()) do
+            if v:IsA("ClickDetector") then
+                fireclickdetector(v)
+            end
+        end
+        wait(0.1)
+        gservice:FireServer(unpack(arg5))
+        fireclickdetector(workspace.Map.AsylumAssets.SewerDoor.ClickDetector)
+    end
+})
+
+Tab2:AddButton({
+    Name = "Finish Part 1 (after exiting asylum)",
+    Callback = function()
+        gservice:FireServer(unpack(arg1))
+        wait(0.1)
+        gservice:FireServer(unpack(arg2))
+        wait(0.1)
+        gservice:FireServer(unpack(arg3))
+        wait(0.1)
+        gservice:FireServer(unpack(arg4))
+    end
+})
+
+Tab2:AddButton({
+    Name = "Light Campfire (after part 1)",
+    Callback = function()
+        tservice:FireServer(unpack(firething))
+        wait(0.1)
+        tservice:FireServer(unpack(firething))
+        wait(0.1)
+        tservice:FireServer(unpack(firething))
+        wait(0.1)
+        tservice:FireServer(unpack(firething))
+        wait(0.1)
+        tservice:FireServer(unpack(firething))
+    end
+})
+
+Tab2:AddButton({
+    Name = "Exit Maze (after campfire)",
+    Callback = function()
+        hrp.CFrame = CFrame.new(1641.8, -44.3, 234.651)
+    end
+})
+
+Tab2:AddParagraph("Info", "You can only multiply up to 50, don't try changing value afterwards either else it'll break.")
+Tab2:AddTextbox({
+	Name = "Multiply Bullets Fired",
+	Default = "1",
+	TextDisappear = true,
+	Callback = function(Value)
+        local settings = {repeatamount = Value, exceptions = {"SayMessageRequest","GunService_EV","IndoorsService_EV","GameService","Footsteps","ControlService","ToolService","AudioService","CryptidService","EndingService","DialogService","GunService","CosmeticService","CollectableService","Message","TipService_EV","DialogService","ReviveService","LoadService","BecomeService_EV","SetLookAngles","NightVisionService",}}
+        local mt = getrawmetatable(game)
+        local old = mt.__namecall
+        setreadonly(mt, false)
+        mt.__namecall = function(uh, ...)
+               local args = {...}
+               local method = getnamecallmethod()
+               for i,o in next, settings.exceptions do
+                       if uh.Name == o then
+                           return old(uh, ...)
+                       end
+               end
+               if method == "FireServer" or method == "InvokeServer" then
+                       for i = 1,settings.repeatamount do
+                           old(uh, ...)
+                       end
+               end
+               return old(uh, ...)
+        end
+        setreadonly(mt, true)
+	end	  
+})
