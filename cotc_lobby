@@ -1,7 +1,10 @@
---WHY DOES THIS NOT WANT TO UPDATE
---github's slow
---anyhow, here's the lobby module for my more easily read version of my cotc script
---cotc_1 and cotc_2 are for chapter 1 and 2, cotc_1 being chapter 1 and cotc_2 being chapter 2.
+--[[
+	why does cotc_1 now not want to update???
+	why does github take this long to update the raw
+	
+	anyhow, here's the lobby module for my more easily read version of my cotc script
+	cotc_1 and cotc_2 are for chapter 1 and 2, cotc_1 being chapter 1 and cotc_2 being chapter 2.
+]]--
 
 local Lib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/BoredStuff2/notify-lib/main/lib'),true))()
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
