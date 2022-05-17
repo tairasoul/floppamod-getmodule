@@ -1,7 +1,6 @@
 --[[
-	how many times do i have to update this before it registers on the raw
-	man
-	why github slow
+	ngl functions are cool
+	this whole repository is for my hget function lol
 	
 	anyway, this is the module for chapter 1 of cult of the cryptids
 ]]--
@@ -123,6 +122,29 @@ Lib.prompt('INFO', "Used another while true do loop for this one.", 15)
 })
 
 --teleports section
+Tab:AddLabel("Non-Backrooms Teleports")
+
+Tab:AddButton({
+    Name = "Teleport to Lobby",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(5082331079, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Chapter 1 (Exploiter/Private Lobby)",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(5202597474, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Chapter 2 (Exploiter/Private Lobby, Origin)",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(6996352354, LocalPlayer)
+    end
+})
+
 Tab:AddLabel("Backrooms Teleports")
 
 Tab:AddButton({
