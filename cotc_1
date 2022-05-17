@@ -1,9 +1,12 @@
 --[[
-	ngl functions are cool
-	this whole repository is for my hget function lol
+	adding script-ware support, just gotta get the executor name correct
 	
 	anyway, this is the module for chapter 1 of cult of the cryptids
 ]]--
+
+if identifyexecutor() == "Script-Ware" then
+	syn.queue_on_teleport = queue_on_teleport
+end
 
 local cservice = game:GetService("ReplicatedStorage").Events.CollectableService
 
