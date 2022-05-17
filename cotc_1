@@ -2,9 +2,9 @@
 	how many times do i have to update this before it registers on the raw
 	man
 	why github slow
+	
+	anyway, this is the module for chapter 1 of cult of the cryptids
 ]]--
-
---anyway, this is the module for chapter 1 of cult of the cryptids
 
 local cservice = game:GetService("ReplicatedStorage").Events.CollectableService
 
