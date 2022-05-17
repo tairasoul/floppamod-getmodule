@@ -1,15 +1,15 @@
-local function get(filename)
+local function hget(filename)
     return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/fheahdythdr/floppamod-getmodule/main/"..filename))()
 end
 
-get("games")
+hget("games")
 
 if table.find(backroom, cg) then
-    get("backroom")
+    hget("backroom")
 end
 if table.find(cotc, cg) then
-    get("cotc")
+    hget("cotc")
 end
 if table.find(pf, cg) then
-    get("pfesp")
+    hget("pfesp")
 end
