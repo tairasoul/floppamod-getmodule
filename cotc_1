@@ -1,3 +1,72 @@
+local cservice = game:GetService("ReplicatedStorage").Events.CollectableService
+
+if workspace.CollectablesPart1.Active:FindFirstChild("Fuel"):FindFirstChild("Fuel1") then
+
+args1 = {
+    [1] = "FoundItemPart1",
+    [2] = workspace.CollectablesPart1.Active.Fuel.Fuel1.Fuel
+}
+
+end
+
+if workspace.CollectablesPart1.Active:FindFirstChild("CrowbarHammer") then
+
+args2 = {
+    [1] = "FoundItemPart1",
+    [2] = workspace.CollectablesPart1.Active.CrowbarHammer.CrowbarHammer
+}
+
+end
+
+if workspace.CollectablesPart1.Active:FindFirstChild("Keys") then
+
+args3 = {
+    [1] = "FoundItemPart1",
+    [2] = workspace.CollectablesPart1.Active.Keys.Keys
+}
+
+end
+
+if workspace.CollectablesPart1.Active:FindFirstChild("Tire"):FindFirstChild("Tire1") then
+
+args4 = {
+    [1] = "FoundItemPart1",
+    [2] = workspace.CollectablesPart1.Active.Tire.Tire1.Tire
+}
+
+end
+
+if workspace.CollectablesPart1.Active:FindFirstChild("ToolKit") then
+
+args5 = {
+    [1] = "FoundItemPart1",
+    [2] = workspace.CollectablesPart1.Active.ToolKit.ToolKit
+}
+
+end
+
+local Lib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/BoredStuff2/notify-lib/main/lib'),true))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "cult of the cryptids script but i smoked meth", HidePremium = false, SaveConfig = true, ConfigFolder = "funni coc esp"})
+
+local Tab2 = Window:MakeTab({
+    Name = "Main",
+    Icon = "",
+    PremiumOnly = false
+})
+
+local Tab1 = Window:MakeTab({
+    Name = "Misc",
+    Icon = "",
+    PremiumOnly = false
+})
+
+local Tab = Window:MakeTab({
+    Name = "Teleports",
+    Icon = "",
+    PremiumOnly = false
+})
+
 ESP:AddObjectListener(workspace.TotemServiceMain.Totems, {
     Color = Color3.fromRGB(255, 0, 255),
 })
@@ -180,3 +249,106 @@ Tab2:AddTextbox({
         setreadonly(mt, true)
 	end	  
 })
+
+Tab1:AddBind({
+    Name = "Toggle UI",
+    Default = Enum.KeyCode.RightShift,
+    Hold = false,
+    Callback = function()
+        if game:GetService("CoreGui").Orion.Enabled == true then
+        game:GetService("CoreGui").Orion.Enabled = false
+        else
+        game:GetService("CoreGui").Orion.Enabled = true
+        end
+    end    
+})
+
+local Tab = Window:MakeTab({
+    Name = "Utilities",
+    Icon = "rbxassetid://5822168115",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "Infinite Yield",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Infinite-Store/main/main.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "Fate's Admin",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "Mollermethod",
+    Callback = function()
+        			loadstring(game:HttpGet 'https://mthd.ml') {
+				bracket_toggle = Enum.KeyCode.LeftBracket;
+				debug = false;
+				volume = 5;
+				bracket_external = false;
+			theme = {
+				accent = "#ff4539";
+				background = "#1c1c1c";
+				foreground = "#f0f6fc";
+			};
+		}
+end
+})
+
+Tab:AddLabel("Mollermethod's keybind is Left Bracket, aka [")
+
+Tab:AddButton({
+    Name = "Rejoin Game",
+    Callback = function()
+        game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId,game.JobId)
+    end
+})
+	
+Tab:AddButton({
+    Name = "Join our Discord!",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/fheahdythdr/legendary-train/main/discord%20invite.lua"))()
+    end
+})
+
+local Tab = Window:MakeTab({
+    Name = "Modifying",
+    Icon = "rbxassetid://4498590361",
+    PremiumOnly = false
+})
+
+Tab:AddParagraph("How to modify this script","Dark Dex and SimpleSpy are your best utilities for this, just find things you wanna add (ex. silent aim) and then modify according things.")
+
+Tab:AddButton({
+    Name = "Dark Dex",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fheahdythdr/legendary-train/main/dark%20dex.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "SimpleSpy",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+    end
+})
+
+Tab1:AddBind({
+    Name = "Toggle UI",
+    Default = Enum.KeyCode.RightShift,
+    Hold = false,
+    Callback = function()
+        if game:GetService("CoreGui").Orion.Enabled == true then
+        game:GetService("CoreGui").Orion.Enabled = false
+        else
+        game:GetService("CoreGui").Orion.Enabled = true
+        end
+    end    
+})
+
+OrionLib:Init()
