@@ -1,6 +1,9 @@
---why did this shit update immediately
---why did it take 2 updates on cotc_lobby for github to register the updated thing on the raw??
---what
+--[[
+	NOW WHY DOES GITHUB TAKE 3 DIFFERENT UPDATES FOR IT TO REGISTER MY UPDATE
+	
+	bro github stupid
+]]--
+
 --anyway, this is the module for chapter 1 of cult of the cryptids
 
 local cservice = game:GetService("ReplicatedStorage").Events.CollectableService
