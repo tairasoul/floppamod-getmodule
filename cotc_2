@@ -2,6 +2,14 @@ local wto = workspace.Totems
 local gservice = game:GetService("ReplicatedStorage").Remotes.RemoteEvents.GameService
 local tservice = game:GetService("ReplicatedStorage").Remotes.RemoteEvents.ToolService
 
+function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+
+local firething = {
+    [1] = "PlacedLog",
+    [2] = getNil("Log", "Tool"),
+    [3] = getNil("HoldingLogs", "Animation")
+}
+
 local arg1 = {
     [1] = "PlacementFireStarter",
     [2] = "Clothing"
