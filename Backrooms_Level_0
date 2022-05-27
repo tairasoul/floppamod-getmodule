@@ -3,6 +3,31 @@ local Lib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/BoredStu
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
+local alreadyexisting = {
+    Color = Color3.new(255, 0, 0),
+    Name = "ENTITY",
+    RenderInNil = true,
+    IsEnabled = "ENT_ESP"
+}
+
+local EXIT = {
+    Color = Color3.new(0, 0, 255),
+    Name = "EXIT",
+    IsEnabled = "EX_ESP"
+}
+
+local cnpc = {
+    Color = Color3.new(0, 125, 255),
+    Name = "COMBINE",
+    IsEnabled = "ENT_ESP"
+}
+
+local g_man = {
+    Color = Color3.new(0, 255, 0),
+    Name = "GMAN",
+    IsEnabled = "ENT_ESP"
+}
+
 hrp = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
     
 local Window = OrionLib:MakeWindow({Name = "A Wanderer's Utilities", HidePremium = false, SaveConfig = true, ConfigFolder = "shitty backrooms esp"})
@@ -304,31 +329,6 @@ Tab:AddButton({
 
 ESP:Add(workspace.ENTITY_1, alreadyexisting)
 ESP:Add(workspace.ENTITY_DANCE, alreadyexisting)
-
-local alreadyexisting = {
-    Color = Color3.new(255, 0, 0),
-    Name = "ENTITY",
-    RenderInNil = true,
-    IsEnabled = "ENT_ESP"
-}
-
-local EXIT = {
-    Color = Color3.new(0, 0, 255),
-    Name = "EXIT",
-    IsEnabled = "EX_ESP"
-}
-
-local cnpc = {
-    Color = Color3.new(0, 125, 255),
-    Name = "COMBINE",
-    IsEnabled = "ENT_ESP"
-}
-
-local g_man = {
-    Color = Color3.new(0, 255, 0),
-    Name = "GMAN",
-    IsEnabled = "ENT_ESP"
-}
 
 ESP:Toggle(true)
 
