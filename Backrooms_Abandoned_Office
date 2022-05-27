@@ -1,0 +1,325 @@
+local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kiriot22/ESP-Lib/main/ESP.lua"))()
+local Lib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/BoredStuff2/notify-lib/main/lib'),true))()
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+hrp = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+    
+local Window = OrionLib:MakeWindow({Name = "A Wanderer's Utilities", HidePremium = false, SaveConfig = true, ConfigFolder = "shitty backrooms esp"})
+
+local Tab = Window:MakeTab({
+    Name = "Game Teleports",
+    Icon = "",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Teleport to Poolrooms",
+	Callback = function()
+		game:GetService("TeleportService"):Teleport(9195387779, LocalPlayer)
+	end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Pipe Dreams",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9359358716, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Abandoned Office",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9193428368, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to The Maprooms",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9204234205, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to The Backrooms",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(8926741973, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Rural Area",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9185104864, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Level 166",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9361563014, LocalPlayer)
+    end
+})
+	
+Tab:AddButton({
+    Name = "Teleport to Mr Kitty's House",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9627727722, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to The Archive",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9223234446, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to The End",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9236784419, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to The Hotel",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9280914973, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Level_Half_Life",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9364689381, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Hazard Course",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9431811877, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Poolrooms: Level 2",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9289542174, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Level !",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9326578533, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Level 434",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9590705492, LocalPlayer)
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to The Leanrooms",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(9606387886, LocalPlayer)
+    end
+})
+    
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddBind({
+    Name = "Toggle UI",
+    Default = Enum.KeyCode.RightShift,
+    Hold = false,
+    Save = true,
+    Flag = "UIToggle",
+    Callback = function()
+        if game:GetService("CoreGui").Orion.Enabled == true then
+        game:GetService("CoreGui").Orion.Enabled = false
+        else
+        game:GetService("CoreGui").Orion.Enabled = true
+        end
+    end    
+})
+
+Tab:AddToggle({
+	Name = "Toggle Player ESP",
+	Default = false,
+        Save = true,
+	Flag = "PlayerESP",
+	Callback = function(Value)
+    ESP.Players = Value
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Exit ESP",
+	Default = false,
+	Save = true,
+	Flag = "ExitESP",
+	Callback = function(Value)
+    	ESP.EX_ESP = Value
+	end    
+})
+	
+Tab:AddToggle({
+	Name = "Entity ESP",
+	Default = false,
+	Save = true,
+        Flag = "EntityESP",
+	Callback = function(Value)
+    	ESP.ENT_ESP = Value
+	end    
+})
+	
+Tab:AddToggle({
+	Name = "Other ESP",
+	Default = false,
+	Save = true,
+	Flag = "OtherESP",
+	Callback = function(Value)
+    	ESP.MISC_ESP = Value
+	end    
+})
+	
+Tab:AddLabel("Original script creator: fheahdythdr.")
+Tab:AddLabel("Discord username and tag is chad gaming#7914")
+
+--[[
+	
+Tab:AddLabel("Script modified by: _________")
+Tab:AddLabel("Discord username and tag is _________")
+use this if you want to add credits for yourself after modifying.
+	
+]]--
+
+
+Lib.prompt('INFO', "Default Orion hide keybind is RIGHT SHIFT.", 15)
+
+local alreadyexisting = {
+    Color = Color3.new(255, 0, 0),
+    Name = "ENTITY",
+    RenderInNil = true,
+    IsEnabled = "ENT_ESP"
+}
+
+local EXIT = {
+    Color = Color3.new(0, 0, 255),
+    Name = "EXIT",
+    IsEnabled = "EX_ESP"
+}
+
+local cnpc = {
+    Color = Color3.new(0, 125, 255),
+    Name = "COMBINE",
+    IsEnabled = "ENT_ESP"
+}
+
+local g_man = {
+    Color = Color3.new(0, 255, 0),
+    Name = "GMAN",
+    IsEnabled = "ENT_ESP"
+}
+
+Lib.prompt('INFO', "No esp could be made here.", 10)
+Lib.prompt('INFO', "The elevator next to spawn is the exit.", 10)
+
+Tab:AddButton({
+    Name = "Exit Level",
+    Callback = function()
+    for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+        if v.ClassName == "TouchTransmitter" and v.Parent ~= "HumanoidRootPart" and v.Name == "TouchInterest" then
+            firetouchinterest(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, v.Parent, 0)
+        end
+        end
+    end
+})
+
+ESP:Toggle(true)
+
+local Tab = Window:MakeTab({
+    Name = "Other Scripts",
+    Icon = "rbxassetid://5822168115",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "Infinite Yield",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Infinite-Store/main/main.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "Fate's Admin",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "Mollermethod",
+    Callback = function()
+        			loadstring(game:HttpGet 'https://mthd.ml') {
+				bracket_toggle = Enum.KeyCode.LeftBracket;
+				debug = false;
+				volume = 5;
+				bracket_external = false;
+			theme = {
+				accent = "#ff4539";
+				background = "#1c1c1c";
+				foreground = "#f0f6fc";
+			};
+		}
+end
+})
+
+Tab:AddLabel("Mollermethod's keybind is Left Bracket, aka [")
+
+Tab:AddButton({
+    Name = "Rejoin Game",
+    Callback = function()
+        game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId,game.JobId)
+    end
+})
+	
+Tab:AddButton({
+    Name = "Join our Discord!",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/fheahdythdr/legendary-train/main/discord%20invite.lua"))()
+    end
+})
+	
+Tab:AddButton({
+    Name = "Another Backrooms Script (made by _nil on scriptblox)",
+    Callback = function()
+   loadstring(game:HttpGet("https://rawscripts.net/raw/The-Backrooms-(K.-Pixels)-GUI-2121"))()
+    end
+})
+
+local Tab = Window:MakeTab({
+    Name = "Modifying",
+    Icon = "rbxassetid://4498590361",
+    PremiumOnly = false
+})
+
+Tab:AddParagraph("How to modify this script","Hello there! First off, use Dark Dex (linked below) to find CFrames of exits and names of entities, then modify accordingly.")
+
+Tab:AddButton({
+    Name = "Dark Dex",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fheahdythdr/legendary-train/main/dark%20dex.lua"))()
+    end
+})
+
+OrionLib:Init()
