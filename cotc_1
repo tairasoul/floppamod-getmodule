@@ -1,12 +1,10 @@
 --[[
-	properly did script-ware support
+	did full queueonteleport support for every executor i know that has it
 	
 	anyway, this is the module for chapter 1 of cult of the cryptids
 ]]--
 
-if identifyexecutor() == "ScriptWare" then
-	syn.queue_on_teleport = queue_on_teleport
-end
+local queueteleport = syn.queue_on_teleport or queue_on_teleport or fluxus.queue_on_teleport and queue_on_teleport or nil
 
 local cservice = game:GetService("ReplicatedStorage").Events.CollectableService
 
@@ -57,7 +55,7 @@ end
 
 local Lib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/BoredStuff2/notify-lib/main/lib'),true))()
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "cult of the cryptids script but i smoked meth", HidePremium = false, SaveConfig = true, ConfigFolder = "funni coc chapter 2"})
+local Window = OrionLib:MakeWindow({Name = "cult of the cryptids script but i smoked meth", HidePremium = false, SaveConfig = true, ConfigFolder = "funni coc chapter 1"})
 local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kiriot22/ESP-Lib/main/ESP.lua"))()
 
 local Tab2 = Window:MakeTab({
@@ -173,8 +171,8 @@ Tab:AddButton({
 	    Lib.prompt("info", "oi ur not in the right game, sending you over", 15)
 	    wait(7.5)
             game:GetService("TeleportService"):Teleport(9341597882, LocalPlayer)
-            if syn then
-                syn.queue_on_teleport('wait(10) game:GetService("Players").LocalPlayer:WaitForChild("Character") end game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1614.55, 193.498, 15.7132)')
+            if queueteleport then
+                queueteleport('wait(10) game:GetService("Players").LocalPlayer:WaitForChild("Character") end game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1614.55, 193.498, 15.7132)')
             end
         elseif pid == 9341597882 then
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1614.55, 193.498, 15.7132)
