@@ -250,6 +250,12 @@ Tab:AddButton({
     end
 })
 
+for i,v in pairs(workspace:GetDescendants()) do
+    if v.Name == "FREE" then
+        ESP:Add(v.Parent, EXIT)
+    end
+end
+
 ESP:Toggle(true)
 
 local Tab = Window:MakeTab({
