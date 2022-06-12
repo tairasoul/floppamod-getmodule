@@ -4,7 +4,7 @@
 	anyway, this is the module for chapter 1 of cult of the cryptids
 ]]--
 
-local queueteleport = syn.queue_on_teleport or queue_on_teleport or fluxus.queue_on_teleport and queue_on_teleport or nil
+local queueteleport = syn.queue_on_teleport or queue_on_teleport or fluxus.queue_on_teleport or queue_on_teleport or nil
 
 local cservice = game:GetService("ReplicatedStorage").Events.CollectableService
 
@@ -177,6 +177,17 @@ Tab:AddButton({
         elseif pid == 9341597882 then
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1614.55, 193.498, 15.7132)
         end
+    end
+})
+
+Tab2:AddButton({
+    Name = "Fullbright",
+    Callback = function()
+        game:GetService("Lighting").Brightness = 2
+        game:GetService("Lighting").ClockTime = 14
+        game:GetService("Lighting").FogEnd = 100000
+        game:GetService("Lighting").GlobalShadows = false
+        game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(128, 128, 128)
     end
 })
 
