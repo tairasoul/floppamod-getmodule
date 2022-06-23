@@ -137,20 +137,6 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-Tab:AddBind({
-    Name = "Toggle UI",
-    Default = Enum.KeyCode.RightShift,
-    Hold = false,
-    Save = true,
-    Flag = "UIToggle",
-    Callback = function()
-        if game:GetService("CoreGui").Orion.Enabled == true then
-        game:GetService("CoreGui").Orion.Enabled = false
-        else
-        game:GetService("CoreGui").Orion.Enabled = true
-        end
-    end    
-})
 
 Tab:AddToggle({
 	Name = "Toggle Player ESP",
@@ -239,23 +225,6 @@ ESP:AddObjectListener(workspace, {
     IsEnabled = "ENT_ESP"
 })
 
-Tab:AddButton({
-    Name = "Refresh ESP (while true do loop)",
-    Callback = function()
-    while true do
-    wait(0.25)
-    ESP:Add(workspace.ENTITY_DANCE, alreadyexisting)
-    ESP:AddObjectListener(workspace, {
-    Color = Color3.new(255, 0, 0),
-    Type = "Model",
-    Name = "ENTITY_DANCE",
-    CustomName = "Entity",
-    IsEnabled = "ENT_ESP"
-})
-end
-end
-})
-
 ESP:Add(workspace.ENTITY_DANCE, alreadyexisting)
 ESP:Add(workspace.Part, EXIT)
 
@@ -337,3 +306,17 @@ Tab:AddButton({
 })
 
 OrionLib:Init()
+
+task.spawn(function()
+	    while true do
+    wait(0.25)
+    ESP:Add(workspace.ENTITY_DANCE, alreadyexisting)
+    ESP:AddObjectListener(workspace, {
+    Color = Color3.new(255, 0, 0),
+    Type = "Model",
+    Name = "ENTITY_DANCE",
+    CustomName = "Entity",
+    IsEnabled = "ENT_ESP"
+})
+end
+end)
