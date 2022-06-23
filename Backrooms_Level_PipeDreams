@@ -352,3 +352,10 @@ Tab:AddButton({
 })
 
 OrionLib:Init()
+
+task.spawn(function()
+	while true do
+wait(0.25)
+ESP:Add(workspace.ENTITY_1, alreadyexisting)
+end
+end)
