@@ -30,7 +30,7 @@ local g_man = {
 
 hrp = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
     
-local Window = OrionLib:MakeWindow({Name = "A Wanderer's Utilities", HidePremium = false, SaveConfig = true, ConfigFolder = "shitty backrooms esp"})
+local Window = OrionLib:MakeWindow({Name = "A Wanderer's Utilities", HidePremium = false, SaveConfig = true, ConfigFolder = "shitty backrooms esp", IntroEnabled = false})
 
 local Tab = Window:MakeTab({
     Name = "Game Teleports",
