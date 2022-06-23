@@ -137,20 +137,6 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-Tab:AddBind({
-    Name = "Toggle UI",
-    Default = Enum.KeyCode.RightShift,
-    Hold = false,
-    Save = true,
-    Flag = "UIToggle",
-    Callback = function()
-        if game:GetService("CoreGui").Orion.Enabled == true then
-        game:GetService("CoreGui").Orion.Enabled = false
-        else
-        game:GetService("CoreGui").Orion.Enabled = true
-        end
-    end    
-})
 
 Tab:AddToggle({
 	Name = "Toggle Player ESP",
@@ -262,17 +248,6 @@ Tab:AddButton({
 
 Lib.prompt('INFO', "You should see 1 entity.", 10)
 
-Tab:AddButton({
-    Name = "Refresh ESP (while true do loop)",
-    Callback = function()		
-while true do
-wait(0.25)
-ESP:Add(workspace.ENTITY_1, alreadyexisting)
-end
-end
-})
-
-
 ESP:Toggle(true)
 
 local Tab = Window:MakeTab({
@@ -351,3 +326,10 @@ Tab:AddButton({
 })
 
 OrionLib:Init()
+
+task.spawn(function()
+	while true do
+wait(0.25)
+ESP:Add(workspace.ENTITY_1, alreadyexisting)
+end
+end)
