@@ -137,20 +137,6 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-Tab:AddBind({
-    Name = "Toggle UI",
-    Default = Enum.KeyCode.RightShift,
-    Hold = false,
-    Save = true,
-    Flag = "UIToggle",
-    Callback = function()
-        if game:GetService("CoreGui").Orion.Enabled == true then
-        game:GetService("CoreGui").Orion.Enabled = false
-        else
-        game:GetService("CoreGui").Orion.Enabled = true
-        end
-    end    
-})
 
 Tab:AddToggle({
 	Name = "Toggle Player ESP",
