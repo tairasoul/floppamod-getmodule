@@ -231,18 +231,6 @@ use this if you want to add credits for yourself after modifying.
 
 Lib.prompt('INFO', "Default Orion hide keybind is RIGHT SHIFT.", 15)
 
-Tab:AddButton({
-    Name = "Refresh ESP (while true do loop)",
-    Callback = function()
-        while true do
-    wait(0.25)
-    ESP:Add(workspace.ENTITY_1, alreadyexisting)
-    ESP:Add(workspace.ENTITY_DANCE, alreadyexisting)
-    end
- 
-    end
-})
-
 Lib.prompt('INFO', "You should see 2 entities.", 15)
 
 
@@ -408,3 +396,11 @@ Tab:AddButton({
 })
 
 OrionLib:Init()
+
+task.spawn(function()
+	while true do
+    wait(0.25)
+    ESP:Add(workspace.ENTITY_1, alreadyexisting)
+    ESP:Add(workspace.ENTITY_DANCE, alreadyexisting)
+    end
+   end)
