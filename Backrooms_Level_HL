@@ -217,9 +217,6 @@ local g_man = {
     IsEnabled = "ENT_ESP"
 }
 
-game:GetService("CoreGui").Orion.Enabled = false
-Lib.prompt('INFO', "Orion has been hidden since this game forces first person.", 15)
-
 ESP:AddObjectListener(workspace, {
     Color = Color3.new(255, 0, 0),
     Type = "Model",
