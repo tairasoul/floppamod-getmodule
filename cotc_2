@@ -265,13 +265,18 @@ Tab2:AddButton({
     end
 })
 
-Tab2:AddParagraph("Info", "You can only multiply up to 50, don't try changing value afterwards either else it'll break.")
+Tab2:AddParagraph("Info", "You can only multiply up to 50.")
 Tab2:AddTextbox({
 	Name = "Multiply Bullets Fired",
 	Default = "1",
 	TextDisappear = true,
 	Callback = function(Value)
-        local settings = {repeatamount = Value, exceptions = {"SayMessageRequest","GunService_EV","IndoorsService_EV","GameService","Footsteps","ControlService","ToolService","AudioService","CryptidService","EndingService","DialogService","GunService","CosmeticService","CollectableService","Message","TipService_EV","DialogService","ReviveService","LoadService","BecomeService_EV","SetLookAngles","NightVisionService",}}
+		getgenv().Multiplication = Value
+	end	  
+})
+
+	getgenv().Multiplication = 1
+        local settings = {repeatamount = getgenv().Multiplication, exceptions = {"SayMessageRequest","GunService","CryptidService","AdminService","PartOne","ControlService","CollectableService","GameService","AudioService","GuiService","ShowMessage","LoadService","EndingService","ToolService","PetService","GivePets","SkinService","ApplySkin","BuyCrate","SpawnPets","RemovePet","TotemService","TotemGUIService","BecomeService"}}
         local mt = getrawmetatable(game)
         local old = mt.__namecall
         setreadonly(mt, false)
@@ -291,8 +296,6 @@ Tab2:AddTextbox({
                return old(uh, ...)
         end
         setreadonly(mt, true)
-	end	  
-})
 
 ESP:Toggle(true)
 
